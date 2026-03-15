@@ -1,4 +1,11 @@
 
+//using Serilog;
+
+using MagicVilla_VillaAPI.Data;
+using MagicVilla_VillaAPI.Logging;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+
 namespace MagicVilla_VillaAPI
 {
     public class Program
@@ -7,12 +14,40 @@ namespace MagicVilla_VillaAPI
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            /*
+            create custom logger configuration instead of the default
+            console logger, and configure it to write logs to a file with daily rolling
+            Log.Logger = new LoggerConfiguration().MinimumLevel.Debug()
+                .WriteTo.File("log/VillaLogs.txt", rollingInterval: RollingInterval.Day)
+                .CreateLogger();
+            */
+
+            //use serilog as the logging provider for the application 
+            //builder.Host.UseSerilog();
+            
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddDbContext<ApplicationDbContext>(option =>
+                option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultSQLConnection"))
+            );
+
+            //accept only json or xml in the request body, return 406 not acceptable
+            //if client requests a format that is not supported
+            //builder.Services.AddControllers();
+            builder.Services.AddControllers(option =>
+            {
+                option.ReturnHttpNotAcceptable = true;
+            }).AddNewtonsoftJson().AddXmlDataContractSerializerFormatters();
+
+            //builder.Services.AddSqlServer<VillaContext>(builder.Configuration.GetConnectionString("DefaultSQLConnection"));
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            //added to use custom logging service instead of the default console
+            //logger, and inject it into the controller for debugging and logging purposes
+            builder.Services.AddSingleton<ILogging,Logging.Logging>();
 
             var app = builder.Build();
 
@@ -26,7 +61,6 @@ namespace MagicVilla_VillaAPI
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
