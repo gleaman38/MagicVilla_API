@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MagicVilla_VillaAPI.Data
 {
+    //comments
     public class ApplicationDbContext:DbContext
     {
         //2:09:45

@@ -2,6 +2,7 @@
 
 namespace MagicVilla_VillaAPI.Data
 {
+    //comments
     //used to temporarily mock up database access to villa data
     public static class VillaStore
     {
