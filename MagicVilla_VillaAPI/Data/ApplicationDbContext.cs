@@ -6,7 +6,7 @@ namespace MagicVilla_VillaAPI.Data
     //comments
     public class ApplicationDbContext:DbContext
     {
-        //2:09:45
+
         public ApplicationDbContext(DbContextOptions options) 
             : base(options)
         {
