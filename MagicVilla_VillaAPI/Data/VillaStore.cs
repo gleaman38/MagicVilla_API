@@ -6,6 +6,7 @@ namespace MagicVilla_VillaAPI.Data
     //used to temporarily mock up database access to villa data
     public static class VillaStore
     {
+
         public static List<VillaDTO> villaList = new List<VillaDTO>
         {
             new VillaDTO { Id = 1, Name = "Pool View", Sqft=100, Occupancy=4 },
