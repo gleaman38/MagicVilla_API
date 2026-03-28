@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace MagicVilla_VillaAPI.Models
 {
     public class Villa
-
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
