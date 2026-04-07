@@ -1,7 +1,6 @@
 
 //using Serilog;
 
-
 using MagicVilla_VillaAPI.Data;
 using MagicVilla_VillaAPI.Logging;
 using Microsoft.EntityFrameworkCore;
@@ -40,6 +39,7 @@ namespace MagicVilla_VillaAPI
                 option.ReturnHttpNotAcceptable = true;
             }).AddNewtonsoftJson().AddXmlDataContractSerializerFormatters();
 
+            //to use sql server as the database provider for the application, and get the connection string from the configuration file
             //builder.Services.AddSqlServer<VillaContext>(builder.Configuration.GetConnectionString("DefaultSQLConnection"));
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

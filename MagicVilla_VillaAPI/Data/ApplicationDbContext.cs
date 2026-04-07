@@ -21,7 +21,7 @@ namespace MagicVilla_VillaAPI.Data
                 {
                     Id=1,
                     Name = "Royal Villa",
-                    Details = "This is the Royal Villa",
+                    Details = "This is the Royal Villa 1",
                     Rate = 200.0,
                     Sqft = 550,
                     Occupancy = 4,
@@ -33,7 +33,7 @@ namespace MagicVilla_VillaAPI.Data
                 {
                     Id=2,
                     Name = "Premium Pool Villa",
-                    Details = "This is the Premium Pool Villa",
+                    Details = "This is the Premium Pool Villa 2",
                     Rate = 300.0,
                     Sqft = 550,
                     Occupancy = 4,
@@ -45,7 +45,7 @@ namespace MagicVilla_VillaAPI.Data
                 {
                     Id = 3,
                     Name = "Villa 3",
-                    Details = "This is 3 Villa",
+                    Details = "This is Villa 3",
                     Rate = 400.0,
                     Sqft = 550,
                     Occupancy = 4,
@@ -57,7 +57,7 @@ namespace MagicVilla_VillaAPI.Data
                 {
                     Id = 4,
                     Name = "Villa 4",
-                    Details = "This is 4 Villa",
+                    Details = "This is Villa 4",
                     Rate = 500.0,
                     Sqft = 550,
                     Occupancy = 4,
@@ -69,7 +69,7 @@ namespace MagicVilla_VillaAPI.Data
                 {
                     Id = 5,
                     Name = "Villa 5",
-                    Details = "This is 5 Villa",
+                    Details = "This is Villa 5",
                     Rate = 600.0,
                     Sqft = 550,
                     Occupancy = 4,

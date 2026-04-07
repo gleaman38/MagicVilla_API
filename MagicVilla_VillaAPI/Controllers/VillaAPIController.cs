@@ -45,7 +45,6 @@ namespace MagicVilla_VillaAPI.Controllers
             _logger = logger;
         }
 
-
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public ActionResult<IEnumerable<VillaDTO>> GetVillas()
